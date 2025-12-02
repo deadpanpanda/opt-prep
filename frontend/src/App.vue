@@ -110,7 +110,7 @@ header {
 
 h1 {
   font-size: 2.5rem;
-  color: white;
+  color: #2c3e50;
   margin: 0;
 }
 
