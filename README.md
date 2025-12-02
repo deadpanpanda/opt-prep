@@ -16,6 +16,31 @@ Demonstrate clean APIs, simple UI, connect frontend to backend, error handling, 
 
 ---
 
+# Dependencies
+
+## Backend
+
+```bash
+npm init -y
+npm install express cors morgan
+npm install -D nodemon
+```
+
+- **express** - Web framework for building the REST API
+- **cors** - Enable Cross-Origin Resource Sharing (frontend on 5173 can call backend on port 3000)
+- **nodemon** - Auto-restarts server when code changes (dev only)
+- **morgan** - HTTP request terminal logger
+
+## Frontend
+
+```bash
+npm create vite@latest frontend -- --template vue-ts
+```
+
+Vite handles everything. No additional dependencies needed beyond what is initialised.
+
+---
+
 # Functional Requirements
 
 ## 1. **Task Model**
@@ -91,7 +116,7 @@ Update any subset of task fields.
 
 **Response:**
 
-* `200 IK` with updated task
+* `200 OK` with updated task
 * or `404 Not Found`
 
 ---
@@ -182,9 +207,9 @@ project/
         errorMiddleware.js
   frontend/
     src/
-      main.js
+      main.ts
       App.vue
-      api.js
+      api.ts
       components/
         TaskList.vue
         TaskForm.vue
