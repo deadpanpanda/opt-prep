@@ -1,7 +1,8 @@
 
-const express = require('express');
+import express from 'express';
+import * as store from './tasksStore.js';
+
 const router = express.Router();
-const store = require('.tasksStore');
 
 const VALID_STATUSES = ['todo', 'in-progress', 'done'];
 const VALID_PRIORITIES = ['low', 'medium', 'high'];
@@ -58,4 +59,4 @@ router.delete('/:id', (req, res) => {
     if (!deleted) return res.status(404).json({error: 'Task not found'});
 });
 
-module.exports = router;
+export default router;

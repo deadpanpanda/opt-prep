@@ -1,8 +1,8 @@
-const express = required('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const tasksRouter = require('./tasksRouter');
-const {errorHandler, notFoundHandler} = require('./errorMiddleware');
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import tasksRouter from './tasksRouter.js';
+import {errorHandler, notFoundHandler} from './errorMiddleware.js';
 
 const app = express();
 const PORT = 3000;
@@ -21,5 +21,5 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log('Server listening on localhost:${PORT}');
+  console.log(`Server listening on localhost:${PORT}`);
 });

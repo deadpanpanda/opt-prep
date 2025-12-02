@@ -55,10 +55,10 @@ function deleteTask(id) {
     return tasks.length < initialLength;
 }
 
-module.exports = {
+export {
     getAllTasks,
     getTaskById,
     createTask,
     updateTask,
     deleteTask
-}
+};
