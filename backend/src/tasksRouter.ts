@@ -63,6 +63,8 @@ router.patch("/:id", (req: Request, res: Response) => {
 router.delete("/:id", (req: Request, res: Response) => {
   const deleted = store.deleteTask(req.params.id);
   if (!deleted) return res.status(404).json({ error: "Task not found" });
+
+  return res.status(204).send();
 });
 
 export default router;
